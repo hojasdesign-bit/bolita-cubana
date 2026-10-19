@@ -1,0 +1,366 @@
+/* Bolita Crypto · estilos propios (tokens de Voltaje DS) */
+
+.bolita {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 500px at 50% -120px, #fff3df 0%, transparent 60%),
+    #fffaf2;
+  color: var(--vlt-ink);
+  padding-bottom: 92px; /* espacio para la tab bar */
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--vlt-space-4);
+}
+
+/* ---------- Marquesina ---------- */
+.marquee-band {
+  background: #0a0a0a;
+  color: var(--vlt-lima);
+  font-family: var(--vlt-font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  overflow: hidden;
+}
+.marquee-band .vlt-ticker-item,
+.marquee-band [class*='item'] {
+  color: var(--vlt-lima);
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, #fffaf2 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid #0a0a0a;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--vlt-space-3) var(--vlt-space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--vlt-space-3);
+}
+.logo {
+  font-family: var(--vlt-font-display);
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+.logo-bolt { color: var(--vlt-brand); }
+.header-spacer { flex: 1; }
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: var(--vlt-space-8) 0 var(--vlt-space-6);
+  position: relative;
+}
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--vlt-space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--vlt-space-4);
+}
+.hero-title {
+  font-family: var(--vlt-font-display);
+  font-size: clamp(3rem, 14vw, 5.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0 0 var(--vlt-space-2);
+}
+.hero-title .hl {
+  background: var(--vlt-lima);
+  padding: 0 0.12em;
+  border: 3px solid #0a0a0a;
+  border-radius: 12px;
+  display: inline-block;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 #0a0a0a;
+}
+.hero-sub {
+  color: var(--vlt-ink-2);
+  font-size: var(--vlt-text-body-lg);
+  margin: 0 0 var(--vlt-space-5);
+}
+.hero-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vlt-space-3);
+  margin-bottom: var(--vlt-space-5);
+  text-align: left;
+}
+.countdown-big {
+  font-family: var(--vlt-font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.countdown-note {
+  font-size: var(--vlt-text-caption);
+  color: var(--vlt-ink-2);
+  margin-top: 4px;
+}
+
+/* ---------- Secciones ---------- */
+.section { padding: var(--vlt-space-6) 0; }
+.section-title {
+  font-family: var(--vlt-font-display);
+  font-size: var(--vlt-text-h2);
+  text-transform: uppercase;
+  margin: 0 0 var(--vlt-space-1);
+  letter-spacing: 0.02em;
+}
+.section-sub {
+  color: var(--vlt-ink-2);
+  margin: 0 0 var(--vlt-space-4);
+  font-size: var(--vlt-text-body-sm);
+}
+
+/* ---------- Cuadrícula de números ---------- */
+.num-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: var(--vlt-space-3);
+}
+.num-cell {
+  aspect-ratio: 1;
+  border: 2px solid #0a0a0a;
+  border-radius: 10px;
+  background: #fff;
+  font-family: var(--vlt-font-display);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--vlt-duration-fast) var(--vlt-ease-out), background var(--vlt-duration-fast);
+}
+.num-cell:hover { transform: translateY(-2px); }
+.num-cell.is-selected {
+  background: var(--vlt-lima);
+  transform: rotate(-4deg) scale(1.06);
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+.num-cell:disabled { cursor: default; opacity: 1; }
+.num-tools {
+  display: flex;
+  gap: var(--vlt-space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--vlt-space-4);
+}
+.charada-line {
+  font-size: var(--vlt-text-body-sm);
+  background: var(--vlt-pastel-peach);
+  border: 2px solid #0a0a0a;
+  border-radius: var(--vlt-radius-md);
+  padding: var(--vlt-space-2) var(--vlt-space-3);
+  margin-bottom: var(--vlt-space-4);
+}
+.charada-line strong { font-family: var(--vlt-font-display); letter-spacing: 0.04em; }
+
+/* ---------- Boleto ---------- */
+.bet-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vlt-space-2);
+  margin-bottom: var(--vlt-space-4);
+}
+.bet-type-card {
+  border: 2px solid #0a0a0a;
+  border-radius: var(--vlt-radius-md);
+  background: #fff;
+  padding: var(--vlt-space-3);
+  cursor: pointer;
+  text-align: left;
+  transition: transform var(--vlt-duration-fast) var(--vlt-ease-out);
+}
+.bet-type-card .mult {
+  font-family: var(--vlt-font-display);
+  font-size: 1.4rem;
+  color: var(--vlt-brand);
+}
+.bet-type-card .name {
+  font-family: var(--vlt-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.bet-type-card .need {
+  font-size: var(--vlt-text-caption);
+  color: var(--vlt-ink-2);
+}
+.bet-type-card.is-active {
+  background: var(--vlt-lima);
+  transform: rotate(-1.5deg);
+  box-shadow: 3px 3px 0 #0a0a0a;
+}
+.bet-type-card.is-active .mult { color: #0a0a0a; }
+.prize-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--vlt-pastel-mint);
+  border: 2px dashed #0a0a0a;
+  border-radius: var(--vlt-radius-md);
+  padding: var(--vlt-space-3) var(--vlt-space-4);
+  margin: var(--vlt-space-4) 0;
+  font-weight: 700;
+}
+.prize-preview .amount {
+  font-family: var(--vlt-font-display);
+  font-size: 1.6rem;
+  color: var(--vlt-success);
+}
+
+/* ---------- Bolas del sorteo ---------- */
+.draw-balls { display: flex; gap: var(--vlt-space-2); }
+.ball {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid #0a0a0a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--vlt-font-display);
+  font-size: 1.3rem;
+  background: #fff;
+  box-shadow: 3px 3px 0 #0a0a0a;
+}
+.ball.ball--win { background: var(--vlt-lima); }
+.ball.ball--sm { width: 40px; height: 40px; font-size: 1rem; border-width: 2px; }
+
+/* ---------- Listas ---------- */
+.list-stack { display: flex; flex-direction: column; gap: var(--vlt-space-2); }
+.row-card {
+  background: #fff;
+  border: 2px solid #0a0a0a;
+  border-radius: var(--vlt-radius-md);
+  padding: var(--vlt-space-3) var(--vlt-space-4);
+}
+.row-card .meta { font-size: var(--vlt-text-caption); color: var(--vlt-ink-2); }
+.mono { font-family: var(--vlt-font-mono); font-size: 0.8rem; word-break: break-all; }
+.verify-link { font-size: var(--vlt-text-body-sm); font-weight: 600; color: var(--vlt-brand); }
+
+/* ---------- Tab bar ---------- */
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: #0a0a0a;
+  border-top: 3px solid #0a0a0a;
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+}
+.tabbar-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.tab {
+  background: none;
+  border: none;
+  color: #b9b9c2;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 8px 2px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+}
+.tab .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+.tab.is-active { color: var(--vlt-lima); }
+.tab.is-active .dot { opacity: 1; box-shadow: 0 0 8px var(--vlt-lima); }
+
+/* ---------- Wallet drawer ---------- */
+.wallet-block { margin-bottom: var(--vlt-space-5); }
+.wallet-block > h3 {
+  font-family: var(--vlt-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--vlt-space-2);
+  font-size: 1.05rem;
+}
+.mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: var(--vlt-space-2); margin-bottom: var(--vlt-space-4); }
+.steps { margin: var(--vlt-space-2) 0; padding-left: 1.2rem; font-size: var(--vlt-text-body-sm); }
+.steps li { margin-bottom: 6px; }
+
+/* ---------- Admin ---------- */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vlt-space-3);
+  margin-bottom: var(--vlt-space-5);
+}
+.pin-row { display: flex; gap: var(--vlt-space-2); }
+.pin-row > *:first-child { flex: 1; }
+.item-actions { display: flex; gap: var(--vlt-space-2); margin-top: var(--vlt-space-2); }
+
+/* ---------- Cómo se juega ---------- */
+.play-card { margin-bottom: var(--vlt-space-3); }
+.play-card h3 {
+  font-family: var(--vlt-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--vlt-space-1);
+}
+.play-card .example {
+  background: #fff;
+  border-left: 4px solid var(--vlt-brand);
+  padding: var(--vlt-space-2) var(--vlt-space-3);
+  border-radius: 0 var(--vlt-radius-sm) var(--vlt-radius-sm) 0;
+  font-size: var(--vlt-text-body-sm);
+  margin-top: var(--vlt-space-2);
+}
+
+/* ---------- Utilidades ---------- */
+.mt-2 { margin-top: var(--vlt-space-2); }
+.mt-4 { margin-top: var(--vlt-space-4); }
+.mb-2 { margin-bottom: var(--vlt-space-2); }
+.center { text-align: center; }
+.filters { display: flex; gap: var(--vlt-space-2); flex-wrap: wrap; margin-bottom: var(--vlt-space-4); }
+.filter-chip {
+  border: 2px solid #0a0a0a;
+  background: #fff;
+  border-radius: var(--vlt-radius-pill);
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: var(--vlt-text-body-sm);
+  cursor: pointer;
+}
+.filter-chip.is-active { background: #0a0a0a; color: #fff; }
+
+.confirm-summary { display: flex; flex-direction: column; gap: var(--vlt-space-2); }
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--vlt-space-3);
+  font-size: var(--vlt-text-body);
+  border-bottom: 1px dashed var(--vlt-line-strong);
+  padding-bottom: var(--vlt-space-2);
+}
+.confirm-row strong { text-align: right; }
+
+@media (min-width: 560px) {
+  .num-cell { font-size: 1.05rem; }
+}
